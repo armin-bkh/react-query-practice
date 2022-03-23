@@ -1,7 +1,12 @@
 import React from "react";
+import Layout from "../Layout/Layout";
 
 function SuperheroesPage() {
-  return <div>SuperheroesPage</div>;
+  return (
+    <Layout>
+      <div>SuperheroesPage</div>
+    </Layout>
+  );
 }
 
 export default SuperheroesPage;
