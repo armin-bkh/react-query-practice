@@ -22,11 +22,13 @@ function SuperheroesPage() {
 
   return (
     <Layout>
-      <div>SuperheroesPage</div>
+      <div className="text-4xl">SuperheroesPage</div>
       {loading ? (
         <h1>Loading...</h1>
       ) : !error && superheroes ? (
-        superheroes.map((superhero) => <p>{superhero.name}</p>)
+        superheroes.map((superhero) => (
+          <p key={superhero.id}>{superhero.name}</p>
+        ))
       ) : (
         <h1>{error}</h1>
       )}
