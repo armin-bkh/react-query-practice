@@ -16,6 +16,7 @@ function SuperheroesPage() {
         setSuperheroes(data);
       })
       .catch((error) => {
+        setLoading(false);
         setError(error.message);
       });
   }, []);

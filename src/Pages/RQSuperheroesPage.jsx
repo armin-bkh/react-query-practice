@@ -8,7 +8,7 @@ const fetchSuperheroes = () => {
 };
 
 function RQSuperheroesPage() {
-  const { isLoading, error, data } = useQuery(
+  const { isLoading, isError, error, data } = useQuery(
     "rq-super-heroes",
     fetchSuperheroes
   );
@@ -17,7 +17,7 @@ function RQSuperheroesPage() {
       <div className="text-4xl">RQSuperheroesPage</div>
       {isLoading ? (
         <h1>Loading...</h1>
-      ) : !error && data ? (
+      ) : !isError && data ? (
         data.data.map((superhero) => <p key={superhero.id}>{superhero.name}</p>)
       ) : (
         <h1>{error.message}</h1>
