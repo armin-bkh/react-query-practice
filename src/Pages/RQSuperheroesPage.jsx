@@ -8,10 +8,14 @@ const fetchSuperheroes = () => {
 };
 
 function RQSuperheroesPage() {
-  const { isLoading, isError, error, data } = useQuery(
+  const { isLoading, isFetching, isError, error, data } = useQuery(
     "rq-super-heroes",
-    fetchSuperheroes
+    fetchSuperheroes,
+    {
+      staleTime: 20000,
+    }
   );
+  console.log({ isLoading, isFetching });
   return (
     <Layout>
       <div className="text-4xl">RQSuperheroesPage</div>
