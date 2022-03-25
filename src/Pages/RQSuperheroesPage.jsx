@@ -12,7 +12,8 @@ function RQSuperheroesPage() {
     "rq-super-heroes",
     fetchSuperheroes,
     {
-      refetchOnWindowFocus: true,
+      // refetchInterval: 2000,
+      // refetchIntervalInBackground: true,
     }
   );
   console.log({ isLoading, isFetching });
