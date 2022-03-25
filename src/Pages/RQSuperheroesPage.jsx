@@ -21,6 +21,9 @@ function RQSuperheroesPage() {
       enabled: false,
       onSuccess,
       onError,
+      select: (data) => {
+        return data.data.map((superhero) => ({ ...superhero, admin: "armin" }));
+      },
     });
   return (
     <Layout>
@@ -29,8 +32,10 @@ function RQSuperheroesPage() {
         (isLoading || isFetching ? (
           <h1>Loading...</h1>
         ) : !isError && data ? (
-          data.data.map((superhero) => (
-            <p key={superhero.id}>{superhero.name}</p>
+          data.map((superhero) => (
+            <p key={superhero.id}>
+              {superhero.name} {superhero.admin}
+            </p>
           ))
         ) : (
           <h1>{error.message}</h1>
