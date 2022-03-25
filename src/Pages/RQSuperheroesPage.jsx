@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useSuperheroes } from "../Hooks/useSuperheroes";
 import Layout from "../Layout/Layout";
 
@@ -23,7 +24,9 @@ function RQSuperheroesPage() {
         ) : !isError && data ? (
           data.map((superhero) => (
             <p key={superhero.id}>
-              {superhero.name} {superhero.admin}
+              <Link to={`${superhero.id}`}>
+                {superhero.name} {superhero.admin}
+              </Link>
             </p>
           ))
         ) : (
