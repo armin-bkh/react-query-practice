@@ -1,11 +1,6 @@
 import React from "react";
-import { useQuery } from "react-query";
+import { useSuperheroes } from "../Hooks/useSuperheroes";
 import Layout from "../Layout/Layout";
-import http from "../Services/httpServices";
-
-const fetchSuperheroes = () => {
-  return http.get("/superheroes");
-};
 
 const onSuccess = (data) => {
   console.log("success", data);
@@ -17,14 +12,8 @@ const onError = (error) => {
 
 function RQSuperheroesPage() {
   const { isLoading, isFetching, isError, error, isIdle, refetch, data } =
-    useQuery("rq-super-heroes", fetchSuperheroes, {
-      enabled: false,
-      onSuccess,
-      onError,
-      select: (data) => {
-        return data.data.map((superhero) => ({ ...superhero, admin: "armin" }));
-      },
-    });
+    useSuperheroes(onSuccess, onError);
+
   return (
     <Layout>
       <div className="text-4xl">RQSuperheroesPage</div>
