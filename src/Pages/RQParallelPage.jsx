@@ -11,7 +11,7 @@ const fetchFriends = () => {
   return http.get("/friends");
 };
 
-function RQParallel() {
+function RQParallelPage() {
   // const { data: superheroes } = useQuery("rqsuperheroes", fetchSuperheroes);
   // const { data: friends } = useQuery("rqfriends", fetchFriends);
   const [{ data: superheroes }, { data: friends }] = useQueries([
@@ -21,7 +21,7 @@ function RQParallel() {
 
   return (
     <Layout>
-      <div className="text-4xl">RQParallel</div>
+      <div className="text-4xl">RQParallelPage</div>
       <h1 className="text-3xl">superheroes</h1>
       {superheroes?.data.map((superhero) => (
         <div key={superhero.id}>
@@ -38,4 +38,4 @@ function RQParallel() {
   );
 }
 
-export default RQParallel;
+export default RQParallelPage;

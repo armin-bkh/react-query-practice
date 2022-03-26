@@ -20,5 +20,13 @@
     { "id": 1, "name": "radin" },
     { "id": 2, "name": "matin" },
     { "id": 3, "name": "bargi" }
-  ]
+  ],
+  "users": [
+    {
+      "name": "Armin",
+      "id": "arminbkh0921@yahoo.com",
+      "channelId": "codevolution"
+    }
+  ],
+  "channels": [{ "id": "codevolution", "email": "arminbkh0921@yahoo.com" }]
 }
