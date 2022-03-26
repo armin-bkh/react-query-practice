@@ -12,6 +12,11 @@ const links = [
     to: "/rqsuperheroes",
     title: "rqsuperheroes",
   },
+  {
+    id: 4,
+    to: "/rqparallel",
+    title: "rqparallel",
+  },
 ];
 
 const Navbar = () => {

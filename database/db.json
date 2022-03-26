@@ -1,19 +1,24 @@
 {
-    "superheroes": [
-        {
-            "id": 1,
-            "name": "1 batman",
-            "alterEgo": "Bruce Wane"
-        },
-        {
-            "id": 2,
-            "name": "2 superman",
-            "alterEgo": "Clark Kent"
-        },
-        {
-            "id": 3,
-            "name": "Wonder Woman",
-            "alterEgo": "princess diana"
-        }
-    ]
+  "superheroes": [
+    {
+      "id": 1,
+      "name": "1 batman",
+      "alterEgo": "Bruce Wane"
+    },
+    {
+      "id": 2,
+      "name": "2 superman",
+      "alterEgo": "Clark Kent"
+    },
+    {
+      "id": 3,
+      "name": "Wonder Woman",
+      "alterEgo": "princess diana"
+    }
+  ],
+  "friends": [
+    { "id": 1, "name": "radin" },
+    { "id": 2, "name": "matin" },
+    { "id": 3, "name": "bargi" }
+  ]
 }
