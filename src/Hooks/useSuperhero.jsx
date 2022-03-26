@@ -1,4 +1,4 @@
-import { useQuery } from "react-query";
+import { useQuery, useQueryClient } from "react-query";
 import http from "../Services/httpServices";
 
 const fetchSuperhero = ({ queryKey }) => {
@@ -7,5 +7,13 @@ const fetchSuperhero = ({ queryKey }) => {
 };
 
 export const useSuperhero = (id) => {
-  return useQuery(["rgsuperhero", id], fetchSuperhero);
+  const queryClient = useQueryClient();
+  return useQuery(["rgsuperhero", id], fetchSuperhero, {
+    initialData: () => {
+      const result = queryClient.getQueriesData("rq-super-heroes");
+      const [[, { data }]] = result;
+      const hero = data?.find((hero) => hero.id === Number(id));
+      return hero ? { data: hero } : undefined;
+    },
+  });
 };
