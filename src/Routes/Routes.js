@@ -1,4 +1,5 @@
 import HomePage from "../Pages/HomePage";
+import RQDynamicSuperheroesPage from "../Pages/RQDynamicSuperheroesPage";
 import RQParallelPage from "../Pages/RQParallelPage";
 import RQSuperheroDetailPage from "../Pages/RQSuperheroDetailPage";
 import RQSuperheroesPage from "../Pages/RQSuperheroesPage";
@@ -13,6 +14,7 @@ const routes = [
   },
   { path: "/rqsuperheroes/:id", element: <RQSuperheroDetailPage /> },
   { path: "/rqparallel", element: <RQParallelPage /> },
+  { path: "/rqdynamicSuperheroes", element: <RQDynamicSuperheroesPage /> },
 ];
 
 export default routes;
