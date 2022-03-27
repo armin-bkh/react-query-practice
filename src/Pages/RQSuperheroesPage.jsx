@@ -45,8 +45,8 @@ function RQSuperheroesPage() {
     <Layout>
       <div className="text-4xl">RQSuperheroesPage</div>
       {addIsLoading ? (
-        <h1>loading...</h1>
-      ) : !addIsError ? (
+        <p>loading...</p>
+      ) : (
         <form onSubmit={submitHandler}>
           <input
             className="border"
@@ -68,12 +68,10 @@ function RQSuperheroesPage() {
             add superhero
           </button>
         </form>
-      ) : (
-        <h1>{addError}</h1>
       )}
       {!isIdle &&
-        (isLoading || isFetching ? (
-          <h1>Loading...</h1>
+        (isLoading ? (
+          <span>Loading...</span>
         ) : !isError && data ? (
           data.map((superhero) => (
             <p key={superhero.id}>
@@ -83,7 +81,7 @@ function RQSuperheroesPage() {
             </p>
           ))
         ) : (
-          <h1>{error.message}</h1>
+          <div>{error.message}</div>
         ))}
       <button
         className="border bg-gray-500 px-3 py-1 rounded-md"

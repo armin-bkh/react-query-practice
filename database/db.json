@@ -21,34 +21,14 @@
       "id": 4
     },
     {
-      "name": "harry potter",
-      "alterEgo": "harry potter",
+      "name": "reza",
+      "alterEgo": "reza",
       "id": 5
     },
     {
-      "name": "iron man",
-      "alterEgo": "felan",
+      "name": "hero",
+      "alterEgo": "sdfsdfsdf",
       "id": 6
-    },
-    {
-      "name": "sdfsf",
-      "alterEgo": "sdfsdf",
-      "id": 7
-    },
-    {
-      "name": "reaz",
-      "alterEgo": "arman",
-      "id": 8
-    },
-    {
-      "name": "reza",
-      "alterEgo": "areafd",
-      "id": 9
-    },
-    {
-      "name": "reza",
-      "alterEgo": "norouzi",
-      "id": 10
     }
   ],
   "friends": [

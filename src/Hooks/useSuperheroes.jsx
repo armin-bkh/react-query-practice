@@ -6,7 +6,7 @@ const fetchSuperheroes = () => {
 };
 
 const postSuperhero = (superhero) => {
-  return http.post("/superheroes", superhero);
+  return http.post("/superheroessd", superhero);
 };
 
 export const useSuperheroes = (onSuccess, onError) => {
@@ -23,14 +23,36 @@ export const useSuperheroes = (onSuccess, onError) => {
 export const useAddSuperhero = () => {
   const queryClient = useQueryClient();
   return useMutation(postSuperhero, {
-    onSuccess: (data) => {
-      // queryClient.invalidateQueries("rq-super-heroes");
+    // onSuccess: (data) => {
+    //   // queryClient.invalidateQueries("rq-super-heroes");
+    //   queryClient.setQueryData("rq-super-heroes", (oldQueryData) => {
+    //     return {
+    //       ...oldQueryData,
+    //       data: [...oldQueryData.data, data.data],
+    //     };
+    //   });
+    // },
+    onMutate: async (superhero) => {
+      await queryClient.cancelQueries("rq-super-heroes");
+      const previusHeroData = queryClient.getQueryData("rq-super-heroes");
       queryClient.setQueryData("rq-super-heroes", (oldQueryData) => {
         return {
           ...oldQueryData,
-          data: [...oldQueryData.data, data.data],
+          data: [
+            ...oldQueryData.data,
+            { id: oldQueryData.data.length + 1, ...superhero },
+          ],
         };
       });
+      return {
+        previusHeroData,
+      };
+    },
+    onError: (_error, _hero, context) => {
+      queryClient.setQueryData("rq-super-heroes", context.previusHeroData);
+    },
+    onSettled: () => {
+      queryClient.invalidateQueries("rq-super-heroes");
     },
   });
 };
