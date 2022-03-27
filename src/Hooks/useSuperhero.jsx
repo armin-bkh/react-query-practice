@@ -10,9 +10,9 @@ export const useSuperhero = (id) => {
   const queryClient = useQueryClient();
   return useQuery(["rgsuperhero", id], fetchSuperhero, {
     initialData: () => {
-      const result = queryClient.getQueriesData("rq-super-heroes");
-      const [[, { data }]] = result;
-      const hero = data?.find((hero) => hero.id === Number(id));
+      const hero = queryClient
+        .getQueryData("rq-super-heroes")
+        ?.data?.find((hero) => hero.id === Number(id));
       return hero ? { data: hero } : undefined;
     },
   });

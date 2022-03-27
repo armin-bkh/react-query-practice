@@ -36,34 +36,19 @@
       "id": 7
     },
     {
-      "name": "armin",
-      "alterEgo": "reza",
+      "name": "reaz",
+      "alterEgo": "arman",
       "id": 8
     },
     {
-      "name": "are",
-      "alterEgo": "na",
+      "name": "reza",
+      "alterEgo": "areafd",
       "id": 9
     },
     {
-      "name": "matinman",
-      "alterEgo": "khoda",
+      "name": "reza",
+      "alterEgo": "norouzi",
       "id": 10
-    },
-    {
-      "name": "a",
-      "alterEgo": "a",
-      "id": 11
-    },
-    {
-      "name": "r",
-      "alterEgo": "r",
-      "id": 12
-    },
-    {
-      "name": "b",
-      "alterEgo": "b",
-      "id": 13
     }
   ],
   "friends": [
