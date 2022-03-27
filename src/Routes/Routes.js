@@ -1,6 +1,7 @@
 import HomePage from "../Pages/HomePage";
 import RQDependentPage from "../Pages/RQDependentPage";
 import RQDynamicSuperheroesPage from "../Pages/RQDynamicSuperheroesPage";
+import RQPaginatedPage from "../Pages/RQPaginatedPage";
 import RQParallelPage from "../Pages/RQParallelPage";
 import RQSuperheroDetailPage from "../Pages/RQSuperheroDetailPage";
 import RQSuperheroesPage from "../Pages/RQSuperheroesPage";
@@ -19,6 +20,10 @@ const routes = [
   {
     path: "/rqdependent",
     element: <RQDependentPage email="arminbkh0921@yahoo.com" />,
+  },
+  {
+    path: "/rqpaginated",
+    element: <RQPaginatedPage />,
   },
 ];
 
