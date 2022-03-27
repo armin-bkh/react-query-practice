@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useQuery } from "react-query";
 import Layout from "../Layout/Layout";
 import http from "../Services/httpServices";
+import queryString from "query-string";
+
 const fetchColors = (page) => {
   return http.get(`/colors?_limit=2&_page=${page}`);
 };
@@ -14,6 +16,7 @@ function RQPaginatedPage() {
       keepPreviousData: true,
     }
   );
+
   return (
     <Layout>
       <div>RQPaginatedPage</div>

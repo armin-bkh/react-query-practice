@@ -1,6 +1,7 @@
 import HomePage from "../Pages/HomePage";
 import RQDependentPage from "../Pages/RQDependentPage";
 import RQDynamicSuperheroesPage from "../Pages/RQDynamicSuperheroesPage";
+import RQInfinitePage from "../Pages/RQInfinitePage";
 import RQPaginatedPage from "../Pages/RQPaginatedPage";
 import RQParallelPage from "../Pages/RQParallelPage";
 import RQSuperheroDetailPage from "../Pages/RQSuperheroDetailPage";
@@ -24,6 +25,10 @@ const routes = [
   {
     path: "/rqpaginated",
     element: <RQPaginatedPage />,
+  },
+  {
+    path: "/rqinfinite",
+    element: <RQInfinitePage />,
   },
 ];
 

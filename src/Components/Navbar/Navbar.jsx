@@ -32,6 +32,11 @@ const links = [
     to: "/rqpaginated",
     title: "rqpaginated",
   },
+  {
+    id: 8,
+    to: "/rqinfinite",
+    title: "rqinfinite",
+  },
 ];
 
 const Navbar = () => {
