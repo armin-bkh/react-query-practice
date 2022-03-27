@@ -1,4 +1,4 @@
-import { useMutation, useQuery } from "react-query";
+import { useMutation, useQuery, useQueryClient } from "react-query";
 import http from "../Services/httpServices";
 
 const fetchSuperheroes = () => {
@@ -11,7 +11,7 @@ const postSuperhero = (superhero) => {
 
 export const useSuperheroes = (onSuccess, onError) => {
   return useQuery("rq-super-heroes", fetchSuperheroes, {
-    enabled: false,
+    // enabled: false,
     onSuccess,
     onError,
     select: (data) => {
@@ -21,5 +21,10 @@ export const useSuperheroes = (onSuccess, onError) => {
 };
 
 export const useAddSuperhero = () => {
-  return useMutation(postSuperhero);
+  const queryClient = useQueryClient();
+  return useMutation(postSuperhero, {
+    onSuccess: () => {
+      queryClient.invalidateQueries("rq-super-heroes");
+    },
+  });
 };
